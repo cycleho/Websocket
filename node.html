@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="jscript" src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="show"></div>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url:"",
+            type:"get",
+            dataType:"json",
+            success:function(json){
+                for(var i = 0;i<json.contributors.length;i++){
+                    $("#show").html("<tr><td>"+json.contributors.name[i]+"</td><td>"+json.contributors.email[i])
+                }
+            },
+            beforeSent:function(){
+
+            },
+            error:function(){
+
+            }
+        })
+    })
+</script>
+</body>
+</html>
